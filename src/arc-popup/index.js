@@ -18,7 +18,7 @@ Component({
     // 最大高度
     maxHeight: {
       type: Number,
-      value: 200
+      value: 600
     },
     // 最小高度
     minHeight: {
@@ -69,6 +69,7 @@ Component({
     'show': function (show) {
       if (show) {
         this.triggerEvent('linshow', detail, option);
+        this.getArcPopupStyle();
       } else {
         this.triggerEvent('linclose', detail, option);
       }
@@ -79,6 +80,7 @@ Component({
       } else {
         this.data._ardRadiusBottom = arcRadius
       }
+      this.getArcPopupStyle();
     }
   },
 
@@ -134,6 +136,9 @@ Component({
       })
     },
     onArcPopupTap() {
+      if (this.data.locked) {
+        return
+      }
       if (this.properties.show) {
         this.setData({
           show: false
@@ -143,6 +148,6 @@ Component({
   },
 
   ready() {
-    this.getArcPopupStyle()
+    this.getArcPopupStyle();
   }
 })

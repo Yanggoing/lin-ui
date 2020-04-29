@@ -69,7 +69,13 @@ const basicNaviConfigs = [{
     title: "Skeleton",
     desc: "骨架屏",
     componentsPath: "/pages/components/view/pages/skeleton/index"
-  }
+  },
+  {
+    icon: "/images/component/popup.png",
+    title: "ArcPopup",
+    desc: "弧形滚动弹出层",
+    componentsPath: "/pages/components/view/pages/arc-popup/index"
+  },
 ]
 
 export default basicNaviConfigs;
